@@ -25,12 +25,12 @@
                         @slot('name', $contact->name)
                         @slot('numbers', $contact->numbers)
                         @slot('buttons')
-                            <button type="button" class="btn btn-default" data-dismiss="modal">{{__('Close')}}</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$('#{{$contact->id}}').fadeOut();">{{__('Close')}}</button>
                         @endslot
                     @endcomponent
 
                     <td>
-                        <a href="#" class="btn btn-success phones" rel="{{$contact->id}}" onclick="$('#{{$contact->id}}').modal({'show':true});">{{__('номера телефонов')}}</a>
+                        <a href="#" class="btn btn-success phones" rel="{{$contact->id}}" onclick="$('#{{$contact->id}}').fadeIn();">{{__('номера телефонов')}}</a>
                     </td>
                 </tr>
             @endforeach
