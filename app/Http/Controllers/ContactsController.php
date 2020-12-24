@@ -22,6 +22,8 @@ class ContactsController extends Controller
      */
     protected $xmlUrl = 'xml/clients.xml';
 
+    protected int $itemsOnPage = 10;
+
     /**
      * ContactController constructor.
      * @param ContactService $contactService
@@ -40,7 +42,7 @@ class ContactsController extends Controller
     {
         $contact = new Contact();
 
-        $contacts = $contact->paginate(10);
+        $contacts = $contact->paginate($this->itemsOnPage);
 
         return view('contacts', ['contacts' => $contacts]);
     }
